@@ -1,0 +1,12 @@
+{
+  "name": "JokesAPI",
+  "version": "0.0.1",
+  "dependencies": {
+    "config": "^1.26.2",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-logger": "^2.0.1",
+    "koa-router": "^7.2.1",
+    "mongodb": "^2.2.31"
+  }
+}
