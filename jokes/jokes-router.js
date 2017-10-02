@@ -1,12 +1,20 @@
-const JokesController = require('./jokes-controller');
-const jokesController = new JokesController();
-function jokesRouter(router){
+const jokesController = require('./jokes-controller');
+
+function JokesRouter(router){
   router.get('/', async ctx =>{
-    return await jokesController.getJokes(ctx);
+
+    return await jokesController.getReviewedJokes(ctx);
   });
   router.get('/jokes', async ctx =>{
-    return await jokesController.getJokes(ctx);
+    return await jokesController.getReviewedJokes(ctx);
+  });
+
+  router.post('/inc-likes-cnt', async ctx =>{
+    return await jokesController.incrementLikesCount(ctx);
+  });
+  router.post('/submit-joke', async ctx =>{
+    return await jokesController.postJokes(ctx);
   });
 }
 
-module.exports = jokesRouter;
+module.exports = JokesRouter;

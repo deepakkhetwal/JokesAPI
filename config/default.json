@@ -1,6 +1,6 @@
 {
   // Customer module configs
   "Jokes": {
-    "dbConfig": "mongodb://jokesapi_app:Remson!123@ds063869.mlab.com:63869/heroku_app28755319"
+    "dbConfig": "mongodb://localhost:27017/kids_laughs"
   }
 }

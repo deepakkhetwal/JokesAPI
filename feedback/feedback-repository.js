@@ -4,34 +4,10 @@
 // and exposes some functions for accessing the data.
 
 function repository(db){
-  const jokes = db.collection('jokes');
-  async function getReviewedJokes(){
+  const feedbacks = db.collection('feedbacks');
+  async function postFeedback(document){
     try{
-
-      return await jokes.find({is_reviewed: true}, {description:1, likes_count: 1}).toArray();
-    } catch(err) {
-      throw new Error(err);
-    }
-  }
-
-  async function postJokes(document){
-    try{
-
-      return await jokes.insertOne(document);
-    } catch(err) {
-      throw new Error(err);
-    }
-  }
-
-  async function incrementLikesCount(id){
-    try{
-
-      return await jokes.update({
-          _id: id
-        },
-        {
-          $inc: {likes_count: 1}
-        })
+      return await feedbacks.insertOne(document);
     } catch(err) {
       throw new Error(err);
     }
@@ -39,11 +15,8 @@ function repository(db){
   const disconnect = () => {
     db.close()
   }
-
   return Object.create({
-    getReviewedJokes,
-    incrementLikesCount,
-    postJokes,
+    postFeedback,
     disconnect
   });
 }
