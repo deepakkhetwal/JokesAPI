@@ -1,8 +1,8 @@
 const feedbackController = require('./feedback-controller');
 
 function FeedbackRouter(router){
-  router.post('/submit-feedback', async ctx =>{
-    return await feedbackController.postFeedback(ctx);
+  router.post('/post-feedback', async ctx =>{
+    ctx.body = await feedbackController.postFeedback(ctx);
   });
 }
 

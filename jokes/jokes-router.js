@@ -10,10 +10,10 @@ function JokesRouter(router){
   });
 
   router.post('/inc-likes-cnt', async ctx =>{
-    return await jokesController.incrementLikesCount(ctx);
+    ctx.body= await jokesController.incrementLikesCount(ctx);
   });
-  router.post('/submit-joke', async ctx =>{
-    return await jokesController.postJokes(ctx);
+  router.post('/post-joke', async ctx =>{
+    ctx.body= await jokesController.postJokes(ctx);
   });
 }
 

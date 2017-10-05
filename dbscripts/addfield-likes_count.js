@@ -1,5 +1,5 @@
 
-const DBConnection = require('../db-connection');
+const DBConnection = require('../db-connection').DbConnection;
 const dbconnection = new DBConnection();
 dbconnection.connect()
   .then(db => {

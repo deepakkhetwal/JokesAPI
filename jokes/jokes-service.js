@@ -1,5 +1,6 @@
-const DbConnection = require('../db-connection');
+const DbConnection = require('../db-connection').DbConnection;
 const dbConnection = new DbConnection();
+const objectId = require('../db-connection').objectId;
 const moment = require('moment');
 class JokesService{
   async  getReviewedJokes(){
@@ -11,11 +12,11 @@ class JokesService{
       throw new Error(err);
     }
   }
-  async  incrementLikesCount(){
+  async  incrementLikesCount(id){
     try{
       const connection = await dbConnection.connect();
       const repository = await require('./jokes-repository').connect(connection);
-      return await repository.incrementLikesCount();
+      return await repository.incrementLikesCount(objectId(id));
     } catch(err){
       throw new Error(err);
     }

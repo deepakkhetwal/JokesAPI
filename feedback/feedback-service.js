@@ -1,4 +1,4 @@
-const DbConnection = require('../db-connection');
+const DbConnection = require('../db-connection').DbConnection;
 const dbConnection = new DbConnection();
 const moment = require('moment');
 class FeedbackService{

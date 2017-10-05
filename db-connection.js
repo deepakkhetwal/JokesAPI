@@ -1,6 +1,7 @@
 const config= require('config');
 const dbConfig = config.get('Jokes.dbConfig');
 const MongoClient = require('mongodb').MongoClient;
+const objectId = require('mongodb').ObjectId;
 let dbConnection;
 class DbConnection {
   async connect(){
@@ -10,4 +11,7 @@ class DbConnection {
     return dbConnection;
   }
 };
-module.exports = DbConnection;
+module.exports = {
+  DbConnection,
+  objectId
+};
