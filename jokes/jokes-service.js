@@ -29,7 +29,6 @@ class JokesService{
         "user_email": options.user_email,
         "description": options.description,
         "comments": [],
-        "jokes_category": options.jokes_category,
         "date_created": moment.utc().format(),
         "likes_count": 0,
         "is_reviewed": false

@@ -13,7 +13,10 @@ function JokesRouter(router){
     ctx.body= await jokesController.incrementLikesCount(ctx);
   });
   router.post('/post-joke', async ctx =>{
-    ctx.body= await jokesController.postJokes(ctx);
+    const response= await jokesController.postJokes(ctx);
+    if(!response){
+      ctx.body={success:true};
+    }
   });
 }
 

@@ -6,7 +6,9 @@ const JokesRouter = require('./jokes/jokes-router');
 const FeedbackRouter = require('./feedback/feedback-router');
 const app = new Koa();
 const router = new Router();
+const cors = require('koa-cors');
 
+app.use(cors());
 app.use(BodyParser({
   onerror: function (err, ctx) {
     ctx.throw('body parse error', 422);
