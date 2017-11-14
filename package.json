@@ -1,6 +1,10 @@
 {
   "name": "JokesAPI",
   "version": "0.0.1",
+  "main": "web.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "config": "^1.26.2",
     "koa": "^2.3.0",
@@ -10,5 +14,9 @@
     "koa-router": "^7.2.1",
     "moment": "^2.18.1",
     "mongodb": "^2.2.31"
+  },
+  "author": "deepak khetwal",
+  "engines": {
+    "node": "8.3.0"
   }
 }
