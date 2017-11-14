@@ -12,7 +12,7 @@ dbconnection.connect()
       jokes.save(doc);
     });
     console.log('likesCount filed added and records update completed successfully');
-    process.exit();
+    //process.exit();
 })
 .catch(err => {
   console.log(err);
