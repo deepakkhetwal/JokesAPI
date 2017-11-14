@@ -21,3 +21,4 @@ FeedbackRouter(router);
 ContactRouter(router);
 app.use(router.routes()).use(router.allowedMethods());
 app.use(logger());
+app.listen(process.env.PORT);
