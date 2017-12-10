@@ -8,7 +8,7 @@ function repository(db){
   async function getReviewedJokes(){
     try{
 
-      return await jokes.find({is_reviewed: true}, {description:1, likes_count: 1}).toArray();
+      return await jokes.find({is_reviewed: true}, {description:1, likes_count: 1}).sort({date_created:-1}).toArray();
     } catch(err) {
       throw new Error(err);
     }
